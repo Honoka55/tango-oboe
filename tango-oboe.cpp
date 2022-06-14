@@ -121,6 +121,7 @@ void DrawHatsuon(tango** risuto,int num){
 		Cursor(30,8);
 		cout<<"当前单词："<<risuto[n]->hyoki;
 		Cursor(30,12);
+		CursorVisible(1);
 		cout<<"请输入读音：";
 		cin>>answer;
 		Cursor(30,15);
@@ -151,6 +152,7 @@ void DrawImi(tango** risuto,int num){
 		Cursor(30,8);
 		cout<<"当前单词："<<risuto[n]->hyoki<<"（"<<risuto[n]->kana<<"）";
 		Cursor(30,12);
+		CursorVisible(1);
 		cout<<"请输入含义：";
 		cin>>answer;
 		Cursor(30,15);
