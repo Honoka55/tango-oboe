@@ -150,7 +150,8 @@ void DrawImi(tango** risuto,int num){
 		char answer[100];
 		cout<<"输入“0”返回主菜单，输入“1”换一个单词。";
 		Cursor(30,8);
-		cout<<"当前单词："<<risuto[n]->hyoki<<"（"<<risuto[n]->kana<<"）";
+		cout<<"当前单词："<<risuto[n]->hyoki;
+		if(strcmp(risuto[n]->hyoki,risuto[n]->kana)!=0) cout<<"（"<<risuto[n]->kana<<"）";
 		Cursor(30,12);
 		CursorVisible(1);
 		cout<<"请输入含义：";
