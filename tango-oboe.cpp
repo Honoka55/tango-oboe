@@ -89,7 +89,7 @@ void RequireOK(){
 	while(1){
 		CursorVisible(1);
 		int i=((int)getch());
-		if(i==' '||i==13){
+		if(i==' '||i==13||i=='0'){
 			CursorVisible(0);
 			break;
 		}
@@ -106,7 +106,6 @@ void Text(){
 
 //显示复习读音界面
 void DrawHatsuon(tango** risuto,int num){
-	//int i=0,j,benkyoshita[999];
 	while(1){
 		Text();
 		int n=RandomId(num);
@@ -193,6 +192,7 @@ int DrawMainMenu(tango** risuto,int num){
 	}	
 }
 
+//主函数 
 int main(){
 	tango* risuto[999];
 	int i;
