@@ -51,33 +51,33 @@ void ClearLine(int y){
 int DrawMenu(char **list,int n,int Sub=0){
 	CursorVisible(0);
 	int i,j,flag=0;
-	Cursor(30+Sub,10);
+	Cursor(5+Sub,5);
 	cout<<">";
 	for(i=0;i<n;i++){
-		Cursor(32+Sub,10+i);
+		Cursor(7+Sub,5+i);
 		cout<<list[i]<<endl;
 	}
 	while(1){
 		i=((int)getch());
 		switch(i){
 			case 's': case 'S': case 80: case '2':
-				Cursor(30+Sub,10+flag);
+				Cursor(5+Sub,5+flag);
 				cout<<" ";
 				if(flag==n-1) flag=0;
 				else flag++;
-				Cursor(30+Sub,10+flag);
+				Cursor(5+Sub,5+flag);
 				cout<<">";
 				break;
 			case 'w': case 'W': case 72: case '8':
-				Cursor(30+Sub,10+flag);
+				Cursor(5+Sub,5+flag);
 				cout<<" ";
 				if(flag==0) flag=n-1;
 				else flag--;
-				Cursor(30+Sub,10+flag);
+				Cursor(5+Sub,5+flag);
 				cout<<">";
 				break;
 			case ' ': case 13: case '0':
-				for(j=0;j<n;j++) ClearLine(10+j);
+				for(j=0;j<n;j++) ClearLine(5+j);
 				return flag;
 		}
 	}
@@ -98,10 +98,10 @@ void RequireOK(){
 
 //清空并归位
 void Text(){
+	ClearLine(5);
 	ClearLine(8);
-	ClearLine(12);
-	ClearLine(15);
-	Cursor(30,0);
+	ClearLine(11);
+	Cursor(5,0);
 }
 
 //显示复习读音界面
@@ -117,13 +117,13 @@ void DrawHatsuon(tango** risuto,int num){
 		}
 		char answer[100];
 		cout<<"输入“0”返回主菜单，输入“1”换一个单词。";
-		Cursor(30,8);
+		Cursor(5,5);
 		cout<<"当前单词："<<risuto[n]->hyoki;
-		Cursor(30,12);
+		Cursor(5,8);
 		CursorVisible(1);
 		cout<<"请输入读音：";
 		cin>>answer;
-		Cursor(30,15);
+		Cursor(5,11);
 		if(strcmp(answer,"0")==0){
 			break;
 		}
@@ -148,14 +148,14 @@ void DrawImi(tango** risuto,int num){
 		int n=RandomId(num);
 		char answer[100];
 		cout<<"输入“0”返回主菜单，输入“1”换一个单词。";
-		Cursor(30,8);
+		Cursor(5,5);
 		cout<<"当前单词："<<risuto[n]->hyoki;
 		if(strcmp(risuto[n]->hyoki,risuto[n]->kana)!=0) cout<<"（"<<risuto[n]->kana<<"）";
-		Cursor(30,12);
+		Cursor(5,8);
 		CursorVisible(1);
 		cout<<"请输入含义：";
 		cin>>answer;
-		Cursor(30,15);
+		Cursor(5,11);
 		if(strcmp(answer,"0")==0){
 			break;
 		}
@@ -200,7 +200,7 @@ int main(){
 	fstream f;
 	f.open("tango-risuto.txt",ios::in);
 	if(f.fail()){
-		Cursor(30,11);
+		Cursor(5,11);
 		cout<<"单词列表加载失败！";
 		RequireOK();
 		ClearLine(11);
