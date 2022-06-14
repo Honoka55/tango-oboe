@@ -1,3 +1,4 @@
 # Auto detect text files and perform LF normalization
-* text=auto
+#* text=auto
 *.txt encoding=GB18030
+*.c encoding=GB18030
