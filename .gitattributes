@@ -1,3 +1,3 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-*.txt text working-tree-encoding=GB18030
+*.txt encoding=GB18030
