@@ -27,18 +27,18 @@ int RandomId(int max){
 
 //移动光标
 void Cursor(int x, int y){
-        COORD pos;
-        HANDLE hOutput;
-        pos.X = x;
-        pos.Y = y;
-        hOutput = GetStdHandle(STD_OUTPUT_HANDLE);
-        SetConsoleCursorPosition(hOutput, pos);
+		COORD pos;
+		HANDLE hOutput;
+		pos.X = x;
+		pos.Y = y;
+		hOutput = GetStdHandle(STD_OUTPUT_HANDLE);
+		SetConsoleCursorPosition(hOutput, pos);
 }
 
 //显示和隐藏光标
 void CursorVisible(int i){
-        CONSOLE_CURSOR_INFO cursor_info = {1,i};
-        SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursor_info);
+		CONSOLE_CURSOR_INFO cursor_info = {1,i};
+		SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursor_info);
 }
 
 //清行
